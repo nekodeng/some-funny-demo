@@ -1,0 +1,26 @@
+<!DOCTYPE html">
+<head>
+<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HappyBirthday Neko</title>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    <pre>               iii          <br>           iiiiiiiiiii<br>          |~~~~~~~~~~~|<br>        __|___________|__<br>       |^^^^^^^^^^^^^^^^^|<br>       |<span id="hbbao" style="color: darkred;">HappyBir</span>|<br>       |                 |  <br>       ~~~~~~~~~~~~~~~~~~~ <br> </pre>
+    <script type="text/javascript">
+     var a = "HappyBirthday Neko";
+     var b = 0 ; 
+     setTimeout("birth()", 1000);
+     function birth() { 
+         document.getElementById("hbbao").innerHTML = a.substring(0, b);
+         if (b == a.length){ 
+             setTimeout("b=0",1000);
+         } 
+         else{
+             b++;
+         }
+         setTimeout("birth()", 300); 
+     }
+     </script>
+</body>
+</html>

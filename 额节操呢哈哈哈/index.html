@@ -1,0 +1,56 @@
+<!DOCTYPE html">
+<head>
+<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>额，节操呢，哈哈哈</title>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<style>
+    .jj{width:100px;height:100px;background:#fff;border-top-right-radius:100px;border-top-left-radius:100px;border:1px solid  #000;border-bottom:none}
+.jj2{width:100px;height:100px;background:#fff;border:1px solid  #000;border-top:none;border-bottom:none}
+.jj3{width:100px;height:100px;background:#fff;border:1px solid  #000;border-bottom-right-radius:100px; border-bottom-left-radius:100px;border-top:none; }
+.jj4{width:50px;height:80px;background:#fff;position:absolute; left:-50px;border:1px solid #000;border-bottom-left-radius:100px;border-top-left-radius:100px;border-right:none;}
+.jj5{ width:50px;height:80px;background:#fff; border-bottom-right-radius:100px;border-top-right-radius:100px;border:1px solid #000;border-left:none;position:absolute;  left:100px;    }
+.jian{ position:absolute; left:500px;top:200px;} 
+#jianjian:hover .jian{display:block}
+.jj6{ border-radius:200px / 250px;position:absolute;top:100px;left:30px;-webkit-animation:jianjian 2s ease-in;  -webkit-animation-fill-mode:forwards; -moz-animation:jianjian 2s ease-in;  -moz-animation-fill-mode:forwards;width: 60px;height: 120px;background: #9C0505;box-shadow: 0 0 60px #C20101,inset 0 0 10px #FF9B9B;  }  
+@-webkit-keyframes jianjian{  
+	0%   {width:0px;height:0px;left:50%;top:50%; opacity:0;}  
+	100% {width: 50px;height:80px; opacity:1;}  
+}  
+@-moz-keyframes jianjian{  
+	0%   {width:0px;height:0px;left:50%;top:50%; opacity:0;}  
+	100% {width: 50px;height:80px; opacity:1;} 
+} 
+.jj7{-webkit-animation: bleeding 1s linear 3s infinite;-moz-animation:  bleeding 1s linear 3s infinite;width:10px;height:10px;border-radius:200px ;position:absolute;top:120px;left:40px}
+@-webkit-keyframes bleeding {
+0% { -webkit-transform: translate3d(0,0,0) rotate(0deg);background:#9C0505;}
+100% {-webkit-transform: translate3d(0,1000px,0) rotate(360deg);}	
+}
+@-moz-keyframes bleeding {
+0% { -moz-transform: translate3d(0,0,0) rotate(0deg);background:#9C0505;}
+100% {-moz-transform: translate3d(0,1000px,0) rotate(360deg);}	
+}
+.jj8{-webkit-animation: bleeding2 5s ease-in 3s infinite;-moz-animation:bleeding2 5s ease-in 3s infinite;width:5px;height:10px;border-radius:200px ;position:absolute;top:170px;left:60px;}
+@-webkit-keyframes bleeding2 {
+0% {  height:0;background:#9C0505}
+100% {height:120px}	
+}
+@-moz-keyframes bleeding2 {
+0% {  height:0;background:#9C0505}
+100% {height:120px}	
+}
+</style>
+</head>
+<body>
+    <div class="jian">
+        <div class="jj"> </div>
+        <div class="jj4"> </div>
+        <div class="jj5"> </div>
+        <div class="jj2"> </div>
+        <div class="jj3"> </div>
+        <div class="jj6"> </div>
+        <div class="jj7"> </div>
+        <div class="jj8"> </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html">
+<head>
+<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>吃啥呢！中关村version！</title>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<style>
+    body{
+    background-color:#fff;
+    text-align:center;
+    padding-top:50px;
+    }
+    
+    #board {
+    position: relative;
+    margin: 50px auto;
+    width: 280px;
+    padding: 33px 25px 29px;
+    background: white;
+    border-bottom: 1px solid #c4c4c4;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    #Result{
+    margin:0 auto;
+    text-align:center;
+    padding:50px 0; 
+    }
+    #Result:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: #c4e17f;
+    border-radius: 5px 5px 0 0;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    }
+    #ResultNum{
+    font-size:30pt;
+    font-family:Verdana
+    }
+    #Button{
+    margin:50px 0 0 0;
+    }
+
+    #Button input{
+    font-size:30px;
+    padding:0 ;
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+    outline:none;
+    }
+
+    #Button input:hover {
+    background-color: #48E68B;
+    outline:none;
+    }
+    #Button input:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+    outline:none;
+    }
+    #btn{
+    background-color:#40AA53;
+    border:1px solid #40AA53;
+    width:200px;
+    height:65px;
+    margin:0em auto;
+    font-size:1em;
+    border-radius:10px;
+    color:#FFF;
+    -webkit-appearance:none;
+    -moz-appearance:none
+    }
+    
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="style.css" type="text/css" media="all">
+<h1 style="color:#40AA53">吃啥呢！</h1>
+
+<div id="board">
+<div id="Result" style="color:#40AA53">
+ <span id="ResultNum">还没想到吗？</span>
+</div>
+</div>
+<div id="Button">
+ <input type='button' id="btn" value='开始' onclick='beginRndNum(this)'/>
+</div>
+<script>
+    var g_Interval = 1;
+    var g_PersonCount = 25;
+    var g_Timer;
+    var running = false;
+   
+    function beginRndNum(trigger){
+    if(running){
+    running = false;
+    clearTimeout(g_Timer); 
+    $(trigger).val("开始");
+    $('#ResultNum').css('color','#00cc75');
+    }
+    else{
+    running = true;
+    $('#ResultNum').css('color','black');
+    $(trigger).val("停止");
+    beginTimer();
+    }
+    }
+
+    function updateRndNum(){
+    var arr=[
+    "云端",
+    "粤菜",
+    "嘉和一品",
+    "杜小月",
+    "西少爷",
+    "心泰心厨",
+    "热啊",
+    "跃界",
+    "渝是乎",
+    "萨莉亚",
+    "宏状元", 
+    "外婆家",
+    "鳗鱼饭",
+    "面香"
+    ]
+    var num = Math.floor(Math.random()*g_PersonCount+1);
+    var num2 = arr[num];//把random出来的数字变成数组下标
+    $('#ResultNum').html(num2);
+    }
+
+    function beginTimer(){
+    g_Timer = setTimeout(beat, g_Interval);
+    }
+
+    function beat() {
+    g_Timer = setTimeout(beat, g_Interval);
+    updateRndNum();
+    }
+</script>
+</body>
+</html>
