@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>itsNeko计划列表
+    </title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+	<div class="card">
+            <div class="card-content">
+                <div class="biaotis">
+                    <span>距离</span>
+                    <span class="zhuti">2021</span>
+                    <span>仅有</span>
+                </div>
+                <div id="CountMsg" class="HotDate">
+                    <span id="t_d">00天</span>
+                    <span id="t_h">00时</span>
+                    <span id="t_m">00分</span>
+                    <span id="t_s">00秒</span>
+                </div>
+                <script type="text/javascript">
+                function getRTime(){
+                var EndTime = new Date('2021/01/01 00:00:00'); //截止时间
+                var NowTime = new Date();
+                var t = EndTime.getTime() - NowTime.getTime();
+
+                //累减
+                // var d=Math.floor(t/1000/60/60/24);
+                // t-=d*(1000*60*60*24);
+                // var h=Math.floor(t/1000/60/60);
+                // t-=h*60*60*1000;
+                // var m=Math.floor(t/1000/60);
+                // t-=m*60*1000;
+                // var s=Math.floor(t/1000);
+
+                //累加
+                var d=Math.floor(t/1000/60/60/24);
+                var h=Math.floor(t/1000/60/60%24);
+                var m=Math.floor(t/1000/60%60);
+                var s=Math.floor(t/1000%60);
+
+                document.getElementById("t_d").innerHTML = d + "天";
+                document.getElementById("t_h").innerHTML = h + "时";
+                document.getElementById("t_m").innerHTML = m + "分";
+                document.getElementById("t_s").innerHTML = s + "秒";
+                }
+                setInterval(getRTime,1000);
+                </script>
+      
+            </div>
+        </div>
+</body>
+</html>
